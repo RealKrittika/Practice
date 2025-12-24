@@ -7,4 +7,4 @@ jobs:
             - name: Print Hello World
               run: |
                 echo "Hello, World!" 
-                echo "${{toJson(github)}}"
+                echo '${{toJson(github)}}'
