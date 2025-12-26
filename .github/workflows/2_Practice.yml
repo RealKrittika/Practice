@@ -1,4 +1,4 @@
-name: Second Workflow running multiple line commands
+name: Multiple line commands & push event
 on: push 
 jobs: 
     first_job:

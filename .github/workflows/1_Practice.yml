@@ -1,5 +1,5 @@
-name: First Workflow till creating workflow
-on: workflow_dispatch
+name: Creating workflow
+on: [workflow_dispatch,push]
 jobs: 
     first_job:
         runs-on: ubuntu-latest
