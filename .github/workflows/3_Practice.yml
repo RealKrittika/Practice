@@ -1,4 +1,4 @@
-name: Using Actions in workflow and multiple jobs- in parallel
+name: 3_Actions in workflow and multiple jobs- in parallel
 on: push
 jobs: 
     test_job:

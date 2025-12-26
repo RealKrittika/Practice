@@ -1,4 +1,4 @@
-name: Creating workflow
+name: 1_Creating workflow & using multiple triggers
 on: [workflow_dispatch,push]
 jobs: 
     first_job:

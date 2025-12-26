@@ -1,4 +1,4 @@
-name: Multiple jobs- in sequence & push event
+name: 4_Multiple jobs- in sequence & push event
 on: push
 jobs: 
     test_job:
@@ -11,6 +11,15 @@ jobs:
 
     dev_job:
       needs: test_job
+      runs-on: ubuntu-latest
+      steps: 
+            - name: Checkout code
+              uses: actions/checkout@v3
+            - name: Print Dev Success
+              run: echo Dev Success!
+
+    prod_job:
+      needs: dev_job
       runs-on: ubuntu-latest
       steps: 
             - name: Checkout code
