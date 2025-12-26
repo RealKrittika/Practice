@@ -1,11 +1,9 @@
-name: First Workflow
-on: [workflow_dispatch, push]
+name: First Workflow till creating workflow
+on: workflow_dispatch
 jobs: 
     first_job:
         runs-on: ubuntu-latest
         steps:
             - name: Print Hello World
               run: echo "Hello, World!" 
-            - name: Print GitHub Context
-              run: echo '${{toJson(github)}}'
                 

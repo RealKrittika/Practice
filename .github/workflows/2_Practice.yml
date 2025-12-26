@@ -1,0 +1,10 @@
+name: Second Workflow running multiple line commands
+on: push 
+jobs: 
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print multiple line code
+              run: |
+                echo Print line one
+                echo '${{toJson(github)}}' 
