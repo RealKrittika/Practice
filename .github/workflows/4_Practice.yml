@@ -22,7 +22,9 @@ jobs:
       needs: dev_job
       runs-on: ubuntu-latest
       steps: 
-            - name: Checkout code
+            - name: Checkout code Prod
               uses: actions/checkout@v4
-            - name: Print Dev Success
-              run: echo Dev Success!
+            - name: Print Prod Success
+              run: |
+                echo Prod Success!
+                echo "All jobs executed in sequence!"
