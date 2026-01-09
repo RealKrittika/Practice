@@ -16,3 +16,9 @@ jobs:
                 - name: Use Secret
                   run: |
                     echo 'Secret Value: ${{ secrets.SAMPLE_SECRET }}'
+                - name: Default Environment Variable
+                  run: |
+                    echo "Home Directory: $HOME"
+                    echo "Runner OS: $RUNNER_OS"
+                    echo "GitHub Workspace: $GITHUB_WORKSPACE"
+                    echo " GitHub Owner: $GITHUB_REPOSITORY_OWNER"
