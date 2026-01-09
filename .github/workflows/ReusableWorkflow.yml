@@ -6,10 +6,23 @@ on:
         description: 'An input for practice'
         required: true
         type: string
+    outputs:
+      practice_output:
+        description: 'An output from the practice job'
+        value: ${{ jobs.practice_job.outputs.practice_output }}
 jobs:
   practice_job:
+    outputs:
+      practice_output: ${{ steps.set-result.outputs.step_result }}
     runs-on: ubuntu-latest
     steps:
       - name: Display Practice Input
         run: |
             echo "The practice input is: ${{ inputs.practice_input }}"
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ inputs.practice_input }}
+      - name: Set result output
+        id: set-result
+        run: echo "step-result=success" >> $GITHUB_OUTPUT
