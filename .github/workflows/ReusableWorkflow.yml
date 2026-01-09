@@ -1,0 +1,15 @@
+name: Reusable_Practice_Workflow
+on:
+  workflow_call:
+    inputs:
+      practice_input:
+        description: 'An input for practice'
+        required: true
+        type: string
+jobs:
+  practice_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display Practice Input
+        run: |
+            echo "The practice input is: ${{ inputs.practice_input }}"
