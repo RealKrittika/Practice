@@ -19,10 +19,6 @@ jobs:
       - name: Display Practice Input
         run: |
             echo "The practice input is: ${{ inputs.practice_input }}"
-      - name: Download Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: ${{ inputs.practice_input }}
       - name: Set result output
         id: set-result
         run: echo "step-result=success" >> $GITHUB_OUTPUT
