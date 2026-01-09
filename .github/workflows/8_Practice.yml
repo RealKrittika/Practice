@@ -17,5 +17,5 @@ jobs:
                 echo "This step will fail"
                 exit 1
             - name: Final step
-              if: failure()
+              if: success()
               run: echo "This step runs regardless of previous step's success."
