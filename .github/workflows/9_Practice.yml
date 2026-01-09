@@ -1,13 +1,20 @@
 name: 9_Matrix Strategy for Parallel Jobs
 on:
     workflow_dispatch:
-    # push:
+    push:
 jobs:
     practice-9:
-        runs-on: ubuntu-latest
         strategy:
             matrix:
                 node-version: [12, 14, 16]
+                operating-system: [ubuntu-latest, windows-latest]
+                include:
+                    - node-version: 18
+                      operating-system: ubuntu-latest
+                exclude:
+                    - node-version: 12
+                      operating-system: windows-latest
+        runs-on: ${{matrix.operating-system}}
         steps:
             - name: Checkout repository
               uses: actions/checkout@v3
@@ -15,9 +22,7 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: ${{ matrix.node-version }}
-            - name: Install dependencies
-              run: npm install
-            - name: Run tests
-              run: npm test
-            - name: Display Node.js version
-              run: node -v
+            - name: Print operating system and Node.js version
+              run: |
+                  echo "Operating System: ${{ matrix.operating-system }}"
+                  node -v
