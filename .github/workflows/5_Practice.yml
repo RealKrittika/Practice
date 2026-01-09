@@ -5,6 +5,7 @@ on:
       - master
     paths-ignore:
       - '*.md'
+  workflow_dispatch:
   pull_request:
     types: [opened, synchronize, reopened]
     

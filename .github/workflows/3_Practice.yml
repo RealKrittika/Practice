@@ -1,5 +1,7 @@
 name: 3_Actions in workflow and multiple jobs- in parallel
-on: push
+on: 
+  push:
+  workflow_dispatch:
 jobs: 
     test_job:
         runs-on: ubuntu-latest

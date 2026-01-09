@@ -1,5 +1,7 @@
 name: 2_Multiple line commands, push event & expression and context object
-on: push 
+on: 
+  push:
+  workflow_dispatch:
 jobs: 
     first_job:
         runs-on: ubuntu-latest
