@@ -8,8 +8,8 @@ jobs:
             steps:
                 - name: Checkout Code
                   uses: actions/checkout@v4
-                # - name: Create a file to upload
-                #   run: echo "This is a sample artifact file." > .github/workflows/upload.txt
+                - name: Create a file to upload
+                  run: echo "This is a sample artifact file." > .github/workflows/upload.txt
     upload_artifacts:
             runs-on: ubuntu-latest
             steps:
