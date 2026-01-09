@@ -1,6 +1,5 @@
 name: 3_Actions in workflow and multiple jobs- in parallel
 on: 
-  push:
   workflow_dispatch:
 jobs: 
     test_job:

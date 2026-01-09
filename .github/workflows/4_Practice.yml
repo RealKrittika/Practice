@@ -1,6 +1,5 @@
 name: 4_Multiple jobs- in sequence & push event
 on: 
-  push:
   workflow_dispatch:
 jobs: 
     test_job:
