@@ -1,5 +1,7 @@
 name: 6_Job Artifacts and Outputs
-on: workflow_dispatch
+on: 
+    workflow_dispatch:
+    push:
 jobs: 
     upload_artifacts:
             runs-on: ubuntu-latest
