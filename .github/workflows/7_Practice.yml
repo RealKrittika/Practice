@@ -1,7 +1,6 @@
 name: 7_Environment Variables and Secrets
 on: 
     workflow_dispatch:
-    push:
 jobs: 
     set_env_and_secret:
             runs-on: ubuntu-latest
