@@ -1,20 +1,24 @@
 name: 6_Job Artifacts and Outputs
 on: 
     workflow_dispatch:
-    push:
 jobs: 
     upload_artifacts:
             runs-on: ubuntu-latest
+            outputs:
+                artifact_id: ${{ steps.upload.outputs.artifact-id }}
             steps:
                 - name: Checkout Code
                   uses: actions/checkout@v4
                 - name: Create a file to upload
                   run: echo "This is a sample artifact file." > .github/workflows/upload.txt
                 - name : Upload Artifact
+                  id: upload
                   uses: actions/upload-artifact@v6
                   with:
                       name: my-artifact
                       path: .github/workflows/upload.txt
+                - name: Print Digest
+                  run: echo "Artifact Digest:${{ steps.upload.outputs.artifact-id }}"
     download_artifacts:
             runs-on: ubuntu-latest
             needs: upload_artifacts
@@ -24,3 +28,6 @@ jobs:
                   with:
                       name: my-artifact
                       path: .github/workflows/downloaded
+                - name: Print artifact ID from previous job
+                  run: |
+                    echo "Artifact ID from job output: ${{ needs.upload_artifacts.outputs.artifact_id }}"
