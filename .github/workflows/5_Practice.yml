@@ -1,0 +1,18 @@
+name: 5_Event Filters and Activity Types
+on: 
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '*.md'
+  pull_request:
+    types: [opened, synchronize, reopened]
+    
+jobs: 
+    build_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v3
+            - name: Print Build Success
+              run: echo Build job executed on push to main branch!
