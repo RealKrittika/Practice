@@ -3,6 +3,13 @@ on:
     workflow_dispatch:
     push:
 jobs: 
+    checkout_code:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Checkout Code
+                  uses: actions/checkout@v4
+                # - name: Create a file to upload
+                #   run: echo "This is a sample artifact file." > .github/workflows/upload.txt
     upload_artifacts:
             runs-on: ubuntu-latest
             steps:
@@ -10,7 +17,7 @@ jobs:
                   uses: actions/upload-artifact@v6
                   with:
                       name: my-artifact
-                      path: ./.github/workflows/upload.txt
+                      path: .github/workflows/upload.txt
     download_artifacts:
             runs-on: ubuntu-latest
             needs: upload_artifacts
