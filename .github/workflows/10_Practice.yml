@@ -7,3 +7,10 @@ jobs:
         uses: ./.github/workflows/ReusableWorkflow.yml
         with:
             practice_input: "Hello from 10_Resuable_Practice_Workflow"
+    print_output:
+        needs: call_reusable_workflow
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print Output from Reusable Workflow
+              run: |
+                  echo "The output from the reusable workflow is: ${{ needs.call_reusable_workflow.outputs.practice_output }}"
