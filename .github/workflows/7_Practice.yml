@@ -1,0 +1,18 @@
+name: 7_Environment Variables and Secrets
+on: 
+    workflow_dispatch:
+    push:
+jobs: 
+    set_env_and_secret:
+            runs-on: ubuntu-latest
+            env:
+                SAMPLE_ENV_VAR: "This is a sample environment variable"
+            steps:
+                - name: Checkout Code
+                  uses: actions/checkout@v4
+                - name: Print Environment Variable
+                  run: | 
+                    echo 'Environment Variable: $SAMPLE_ENV_VAR'
+                - name: Use Secret
+                  run: |
+                    echo 'Secret Value: ${{ secrets.SAMPLE_SECRET }}'
