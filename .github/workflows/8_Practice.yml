@@ -1,7 +1,6 @@
 name: 8_Controlling workflow and job execution
 on:
     workflow_dispatch:
-    push:
 jobs:
     practice-8:
         runs-on: ubuntu-latest

@@ -3,5 +3,7 @@ description: 'A GitHub Action to demonstrate creating composite actions'
 runs: 
     using: 'composite'
     steps: 
+        - name: Checkout code
+          uses: actions/checkout@v3
         - name: Actions steps are called
           runs: echo "Actions called success!"
