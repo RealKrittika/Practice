@@ -1,0 +1,12 @@
+name: 11_Composite actions reuse
+on: 
+    workflow_dispatch:
+    push:
+jobs: 
+    calling_actions:
+        runs-on: ubuntu-latest
+        steps:
+            - name: call actions
+              uses: ./.github/actions/actions.yml
+
+
