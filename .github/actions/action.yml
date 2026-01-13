@@ -4,5 +4,6 @@ runs:
     using: 'composite'
     steps: 
         - name: Actions steps are called
-          runs: echo "Actions called success!"
+          run: |
+            echo "Actions called success!"
           shell: bash
